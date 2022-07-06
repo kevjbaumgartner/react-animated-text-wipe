@@ -1,0 +1,38 @@
+.AnimatedTextWipe-Outer {
+	background: linear-gradient(to right, #FFFFFF 0%, #FFFFFF 33%, #000000 33%, #000000 66%, #FFFFFF 66%, #FFFFFF 100%);
+	background-size: 500% 100%;
+	width: fit-content;
+}
+
+.AnimatedTextWipe-Inner {
+	color: white;
+	mix-blend-mode: difference;
+}
+
+.Right {
+	animation: LtR 2s linear 0s infinite normal;
+}
+
+.Left {
+	animation: RtL 2s linear 0s infinite normal;
+}
+
+@keyframes LtR {
+	0% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes RtL {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	100% {
+		background-position: 100% 50%;
+	}
+}
