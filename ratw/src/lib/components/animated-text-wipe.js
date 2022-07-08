@@ -3,26 +3,41 @@ import './styles/AnimatedTextWipe.css';
 
 const AnimatedTextWipe = (props) => {
 
-	const FirstColor = props.firstColor;
-	const SecondColor = props.secondColor;
-	const TextColor = props.textColor;
-	const MBM = props.MBM;
+	const text = props.text;
+	const firstColor = props.firstColor;
+	const secondColor = props.secondColor;
+	const textColor = props.textColor;
+	const difference = props.difference;
+	const antialiasing = props.antialiasing;
+	const direction = props.direction;
+	const speed = props.speed;
 
-	const AnimatedTextWipeOuter = {
-		'background': 'linear-gradient(to right, #' + FirstColor + ' 0%, #' + FirstColor + ' 33%, #' + SecondColor + ' 33%, #' + SecondColor + ' 66%, #' + FirstColor + ' 66%, #' + FirstColor + ' 100%)',
-		'backgroundSize': '500% 100%',
-		'width': 'fit-content'
-	};
-
-	const AnimatedTextWipeInner = {
-		'color': '#' + TextColor,
-		'mixBlendMode': MBM === 'true' ? 'difference' : 'unset'
+	const styles = {
+		AnimatedTextWipeOuter: {
+			'background': 'linear-gradient(to right, #' + firstColor + ' 0%, #' + firstColor + ' 33%, #' + secondColor + ' 33%, #' + secondColor + ' 66%, #' + firstColor + ' 66%, #' + firstColor + ' 100%)',
+			'backgroundSize': '303% 100%',
+			'width': 'fit-content'
+		},
+		AnimatedTextWipeInner: {
+			'color': '#' + textColor,
+		},
+		MBM: {
+			'mixBlendMode': difference === 'true' ? 'difference' : 'unset',
+		},
+		AA: {
+			'backgroundColor': '#' + textColor,
+			'WebkitBackgroundClip': 'text',
+			'WebkitTextFillColor': 'transparent'
+		},
+		Animation: {
+			'animation': direction + ' ' + speed + 's linear 0s infinite normal'
+		}
 	};
 
 	return (
-		<div className={`${props.direction}`} style={AnimatedTextWipeOuter}>
-			<div style={AnimatedTextWipeInner}>
-				{props.text}
+		<div style={Object.assign({}, styles.AnimatedTextWipeOuter, styles.Animation)}>
+			<div style={Object.assign({}, styles.AnimatedTextWipeInner, difference === 'true' ? styles.MBM : '', antialiasing === 'true' ? styles.AA : '')}>
+				{text}
 			</div>
 		</div>
 	);

@@ -1,12 +1,4 @@
-.Right {
-	animation: LtR 2s linear 0s infinite normal;
-}
-
-.Left {
-	animation: RtL 2s linear 0s infinite normal;
-}
-
-@keyframes LtR {
+@keyframes right {
 	0% {
 		background-position: 100% 50%;
 	}
@@ -16,7 +8,7 @@
 	}
 }
 
-@keyframes RtL {
+@keyframes left {
 	0% {
 		background-position: 0% 50%;
 	}
