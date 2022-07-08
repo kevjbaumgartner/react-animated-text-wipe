@@ -7,12 +7,13 @@ function App() {
 				firstColor='FFFFFF'
 				secondColor='000000'
 				textColor='FFFFFF'
-				text='Lobortis leo orci, id tincidunt magna pulvinar a. Aliquam erat volutpat.'
 				direction='right'
 				difference='true'
 				antialiasing='true'
 				speed='1'
-			/>
+			>
+				Lobortis leo orci, id tincidunt magna pulvinar a. Aliquam erat volutpat.
+			</AnimatedTextWipe>
 		</div>
 	);
 }

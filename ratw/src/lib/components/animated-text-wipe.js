@@ -3,7 +3,6 @@ import './styles/AnimatedTextWipe.css';
 
 const AnimatedTextWipe = (props) => {
 
-	const text = props.text;
 	const firstColor = props.firstColor;
 	const secondColor = props.secondColor;
 	const textColor = props.textColor;
@@ -37,7 +36,7 @@ const AnimatedTextWipe = (props) => {
 	return (
 		<div style={Object.assign({}, styles.AnimatedTextWipeOuter, styles.Animation)}>
 			<div style={Object.assign({}, styles.AnimatedTextWipeInner, difference === 'true' ? styles.MBM : '', antialiasing === 'true' ? styles.AA : '')}>
-				{text}
+				{props.children}
 			</div>
 		</div>
 	);
