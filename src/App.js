@@ -12,7 +12,7 @@ function App() {
 				antialiasing='true'
 				speed='1'
 			>
-				Lobortis leo orci, id tincidunt magna pulvinar a. Aliquam erat volutpat.
+				Child content goes here!
 			</AnimatedTextWipe>
 		</div>
 	);

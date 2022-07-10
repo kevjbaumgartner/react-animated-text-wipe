@@ -14,6 +14,8 @@ require("./styles/AnimatedTextWipe.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const AnimatedTextWipe = props => {
+  const id = props.id;
+  const className = props.className;
   const firstColor = props.firstColor;
   const secondColor = props.secondColor;
   const textColor = props.textColor;
@@ -42,9 +44,11 @@ const AnimatedTextWipe = props => {
       'animation': direction + ' ' + speed + 's linear 0s infinite normal'
     }
   };
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("span", {
+    id: id,
+    className: className,
     style: Object.assign({}, styles.AnimatedTextWipeOuter, styles.Animation)
-  }, /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("span", {
     style: Object.assign({}, styles.AnimatedTextWipeInner, difference === 'true' ? styles.MBM : '', antialiasing === 'true' ? styles.AA : '')
   }, props.children));
 };
