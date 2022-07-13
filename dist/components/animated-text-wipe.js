@@ -25,8 +25,8 @@ const AnimatedTextWipe = props => {
   const speed = props.speed;
   const styles = {
     AnimatedTextWipeOuter: {
-      'background': 'linear-gradient(to right, #' + firstColor + ' 0%, #' + firstColor + ' 33%, #' + secondColor + ' 33%, #' + secondColor + ' 66%, #' + firstColor + ' 66%, #' + firstColor + ' 100%)',
-      'backgroundSize': '303% 100%',
+      'background': 'linear-gradient(to ' + (direction === 'right' ? 'right' : direction === 'left' ? 'right' : 'bottom') + ', #' + firstColor + ' 0%, #' + firstColor + ' 33%, #' + secondColor + ' 33%, #' + secondColor + ' 66%, #' + firstColor + ' 66%, #' + firstColor + ' 100%)',
+      'backgroundSize': direction === 'right' ? '303% 100%' : direction === 'left' ? '303% 100%' : '100% 303%',
       'width': 'fit-content'
     },
     AnimatedTextWipeInner: {

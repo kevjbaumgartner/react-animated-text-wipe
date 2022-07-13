@@ -17,3 +17,23 @@
 		background-position: 100% 50%;
 	}
 }
+
+@keyframes up {
+	0% {
+		background-position: 50% 0%;
+	}
+
+	100% {
+		background-position: 50% 100%;
+	}
+}
+
+@keyframes down {
+	0% {
+		background-position: 50% 100%;
+	}
+
+	100% {
+		background-position: 50% 0%;
+	}
+}
