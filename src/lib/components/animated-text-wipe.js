@@ -5,9 +5,11 @@ const AnimatedTextWipe = (props) => {
 
 	const id = props.id;
 	const className = props.className;
+
 	const firstColor = props.firstColor;
 	const secondColor = props.secondColor;
 	const textColor = props.textColor;
+
 	const difference = props.difference;
 	const antialiasing = props.antialiasing;
 	const direction = props.direction;
@@ -15,18 +17,18 @@ const AnimatedTextWipe = (props) => {
 
 	const styles = {
 		AnimatedTextWipeOuter: {
-			'background': 'linear-gradient(to ' + (direction === 'right' ? 'right' : direction === 'left' ? 'right' : 'bottom') + ', #' + firstColor + ' 0%, #' + firstColor + ' 33%, #' + secondColor + ' 33%, #' + secondColor + ' 66%, #' + firstColor + ' 66%, #' + firstColor + ' 100%)',
+			'background': 'linear-gradient(to ' + (direction === 'right' ? 'right' : direction === 'left' ? 'right' : 'bottom') + ', ' + firstColor + ' 0%, ' + firstColor + ' 33%, ' + secondColor + ' 33%, ' + secondColor + ' 66%, ' + firstColor + ' 66%, ' + firstColor + ' 100%)',
 			'backgroundSize': direction === 'right' ? '303% 100%' : direction === 'left' ? '303% 100%' : '100% 303%',
 			'width': 'fit-content'
 		},
 		AnimatedTextWipeInner: {
-			'color': '#' + textColor,
+			'color': textColor,
 		},
 		MBM: {
 			'mixBlendMode': difference === 'true' ? 'difference' : 'unset',
 		},
 		AA: {
-			'backgroundColor': '#' + textColor,
+			'backgroundColor': textColor,
 			'WebkitBackgroundClip': 'text',
 			'WebkitTextFillColor': 'transparent'
 		},
